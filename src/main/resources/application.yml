@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: doseogateway
+  cloud:
+    gateway:
+      routes:
+        - id: user
+          uri: http://127.0.0.1:7071
+          predicates:
+            - Path=/user/**
+
+        - id: book
+          uri: http://127.0.0.1:7072
+          predicates:
+            - Path=/book/**
+
+        - id: rent
+          uri: http://127.0.0.1:7073
+          predicates:
+            - Path=/rent/**
+
+
+
+server:
+  port: 9000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      #      defaultZone: http://192.168.0.27:8761/eureka
+      defaultZone: http://127.0.0.1:8761/eureka
