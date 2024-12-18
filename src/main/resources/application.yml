@@ -22,12 +22,12 @@ spring:
 
 
 server:
-  port: 9000
+  port: 7070
 
 eureka:
   client:
-    fetch-registry: true
-    register-with-eureka: true
+    fetch-registry: false
+    register-with-eureka: false
     service-url:
       #      defaultZone: http://192.168.0.27:8761/eureka
       defaultZone: http://127.0.0.1:8761/eureka
